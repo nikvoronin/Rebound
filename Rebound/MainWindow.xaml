@@ -1,0 +1,133 @@
+﻿<Window x:Class="Rebound.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Rebound"
+        Width="645" Height="820"
+        Background="#FF050508"
+        WindowStartupLocation="CenterScreen"
+        Focusable="True"
+        PreviewKeyDown="Window_PreviewKeyDown"
+        PreviewMouseMove="Window_PreviewMouseMove"
+        PreviewMouseLeftButtonDown="Window_PreviewMouseLeftButtonDown">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- HUD -->
+        <Border Grid.Row="0"
+                Margin="8"
+                Padding="10"
+                Background="#FF101018"
+                CornerRadius="6">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Orientation="Horizontal">
+                    <TextBlock Text="SCORE "
+                               Foreground="#FF8BE9FD"
+                               FontFamily="Consolas"
+                               FontSize="18" />
+                    <TextBlock x:Name="ScoreText"
+                               Text="000000"
+                               Foreground="White"
+                               FontFamily="Consolas"
+                               FontSize="18">
+                        <TextBlock.CacheMode>
+                            <BitmapCache />
+                        </TextBlock.CacheMode>
+                    </TextBlock>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1"
+                            Orientation="Horizontal"
+                            Margin="24,0">
+                    <TextBlock Text="LEVEL "
+                               Foreground="#FFFFB86C"
+                               FontFamily="Consolas"
+                               FontSize="18" />
+                    <TextBlock x:Name="LevelText"
+                               Text="1"
+                               Foreground="White"
+                               FontFamily="Consolas"
+                               FontSize="18">
+                        <TextBlock.CacheMode>
+                            <BitmapCache />
+                        </TextBlock.CacheMode>
+                    </TextBlock>
+                </StackPanel>
+
+                <StackPanel Grid.Column="2" Orientation="Horizontal">
+                    <TextBlock Text="LIVES "
+                               Foreground="#FF50FA7B"
+                               FontFamily="Consolas"
+                               FontSize="18" />
+                    <TextBlock x:Name="LivesText"
+                               Text="3"
+                               Foreground="White"
+                               FontFamily="Consolas"
+                               FontSize="18">
+                        <TextBlock.CacheMode>
+                            <BitmapCache />
+                        </TextBlock.CacheMode>
+                    </TextBlock>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Game field -->
+        <Grid Grid.Row="1" Margin="8">
+            <Viewbox>
+                <Border BorderBrush="#FF8BE9FD" BorderThickness="3">
+                    <Border.CacheMode>
+                        <BitmapCache />
+                    </Border.CacheMode>
+                    <Canvas x:Name="GameCanvas"
+                            Width="600"
+                            Height="700"
+                            ClipToBounds="True">
+                        <Canvas.Background>
+                            <DrawingBrush TileMode="Tile" Viewport="0,0,20,20" ViewportUnits="Absolute">
+                                <DrawingBrush.Drawing>
+                                    <DrawingGroup>
+                                        <GeometryDrawing Brush="#FF24244A">
+                                            <GeometryDrawing.Geometry>
+                                                <RectangleGeometry Rect="0,0,20,20" />
+                                            </GeometryDrawing.Geometry>
+                                        </GeometryDrawing>
+                                        <GeometryDrawing Brush="#FF46467E">
+                                            <GeometryDrawing.Geometry>
+                                                <EllipseGeometry Center="10,10" RadiusX="2.2" RadiusY="2.2" />
+                                            </GeometryDrawing.Geometry>
+                                        </GeometryDrawing>
+                                    </DrawingGroup>
+                                </DrawingBrush.Drawing>
+                            </DrawingBrush>
+                        </Canvas.Background>
+                    </Canvas>
+                </Border>
+            </Viewbox>
+
+            <!-- Overlay message -->
+            <TextBlock x:Name="MessageText"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       TextAlignment="Center"
+                       FontFamily="Consolas"
+                       FontSize="34"
+                       FontWeight="Bold"
+                       Foreground="#FFFFFFFF"
+                       IsHitTestVisible="False">
+                <TextBlock.CacheMode>
+                    <BitmapCache />
+                </TextBlock.CacheMode>
+            </TextBlock>
+        </Grid>
+    </Grid>
+</Window>
