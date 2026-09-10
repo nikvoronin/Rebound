@@ -23,7 +23,7 @@ the spirit of *Arkanoid*.
     ball.
   - When a level is complete, it advances to the next level.
   - After Game Over or clearing all levels, it restarts from level 1.
-- **Quit**: `Escape`.
+- **Pause**: `Escape`.
 - **Lives**: you start with 3. Losing the ball (letting it fall past the
   bottom of the field) costs one life; the ball then re-attaches to the
   paddle. Reaching 0 lives ends the game.
