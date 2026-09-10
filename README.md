@@ -2,7 +2,7 @@
 
 A desktop Breakout/Arkanoid-style brick-breaker built with [WPF](https://learn.microsoft.com/en-us/dotnet/desktop/wpf/overview/) and .NET.
 
-/Placeholder for screenshot/
+![rebound-inplay_the-first-level](https://github.com/user-attachments/assets/3f16d787-2784-4d32-8b2c-28b68eec12dd)
 
 Brick-breaker games trace back to Atari's *Breakout* (1976), created by
 Nolan Bushnell and Steve Bristow and famously prototyped by Steve Wozniak
